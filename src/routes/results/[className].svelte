@@ -30,6 +30,38 @@
   });
 </script>
 
-{#each results as { place, name, result }}
-  <div>{place}) {name}, {result}</div>
-{/each}
+<h1>{className}</h1>
+
+<div class="results">
+  {#each results as { place, name, club, result }}
+    <div>{place}</div>
+    <div>
+      <span>{name}</span>
+      <span class="club">{club}</span>
+    </div>
+    <div class="result">{result}</div>
+  {/each}
+</div>
+
+<style>
+  h1 {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .results {
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 8% auto 14%;
+  }
+
+  .club {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .result {
+    justify-self: end;
+  }
+</style>
