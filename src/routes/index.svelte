@@ -8,8 +8,8 @@
   export let classes: Classes;
 </script>
 
-<h1>SCC E1 Södra station</h1>
-<h2>2022-05-18</h2>
+<h1>SCC E2 Tantolunden</h1>
+<h2>2022-05-24</h2>
 
 {#each classes as { className }}
   <div class="links">

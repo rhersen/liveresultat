@@ -18,7 +18,7 @@
 
   onMount(async () => {
     const method = 'getclassresults';
-    const comp = '22636';
+    const comp = '22637';
     const response = await fetch(
       [
         'https://liveresultat.orientering.se/api.php',
