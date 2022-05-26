@@ -12,17 +12,17 @@
     start: number;
   }
 
+  export let competition;
   export let className;
 
   let results: Result[] = [];
 
   onMount(async () => {
     const method = 'getclassresults';
-    const comp = '22692';
     const response = await fetch(
       [
         'https://liveresultat.orientering.se/api.php',
-        [`method=${method}`, `comp=${comp}`, `class=${className}`].join('&')
+        [`method=${method}`, `comp=${competition}`, `class=${className}`].join('&')
       ].join('?')
     );
 
