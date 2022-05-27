@@ -1,5 +1,14 @@
-<a href="22637">22637</a>
-<a href="22692">22692</a>
+<script lang="ts">
+  export let competitions;
+</script>
+
+<ol>
+  {#each competitions as { name, id, date }}
+    <li>
+      <a href={id}>{name}</a>
+    </li>
+  {/each}
+</ol>
 
 <style>
   * {

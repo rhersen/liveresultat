@@ -1,6 +1,11 @@
 export async function get() {
   const response = await fetch(
-    'https://liveresultat.orientering.se/api.php?method=getclasses&comp=22692'
+    'https://liveresultat.orientering.se/api.php?method=getcompetitions'
   );
-  return { body: await response.json() };
+  const text = await response.text();
+  const body = JSON.parse(text.replace(/\t/g, ''));
+  const today = new Date().toISOString().substring(0, 10);
+
+  const competitions = body.competitions.filter(({ date }) => date === today);
+  return { body: { competitions } };
 }

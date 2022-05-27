@@ -9,9 +9,6 @@
   export let competition;
 </script>
 
-<h1>[competition name]</h1>
-<h2>[date]</h2>
-
 {#each classes as { className }}
   <div class="links">
     <a href="{competition}/{className}">{className}</a>
