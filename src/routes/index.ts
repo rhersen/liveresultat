@@ -1,3 +1,5 @@
+import type { Competition } from '../types';
+
 export async function get() {
   const response = await fetch(
     'https://liveresultat.orientering.se/api.php?method=getcompetitions'
@@ -6,6 +8,8 @@ export async function get() {
   const body = JSON.parse(text.replace(/\t/g, ''));
   const today = new Date().toISOString().substring(0, 10);
 
-  const competitions = body.competitions.filter(({ date }) => date === today);
+  const competitions = body.competitions.filter(
+    (competition: Competition) => competition.date === today
+  );
   return { body: { competitions } };
 }

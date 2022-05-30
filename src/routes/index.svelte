@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let competitions;
+  import type { Competition } from '../types';
+
+  export let competitions: Competition;
 </script>
 
 <ol>
