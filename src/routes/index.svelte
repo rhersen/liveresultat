@@ -2,6 +2,7 @@
   import type { Competition } from '../types';
 
   export const hydrate = false;
+  export const router = false;
 
   export let competitions: Competition;
 </script>
