@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { Competition } from '../types';
 
+  export const hydrate = false;
+
   export let competitions: Competition;
 </script>
 
