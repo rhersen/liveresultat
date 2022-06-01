@@ -12,6 +12,8 @@
     start: number;
   }
 
+  export const prerender = false;
+
   export let competition;
   export let className;
 

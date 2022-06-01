@@ -5,6 +5,8 @@
     hash: string;
   }
 
+  export const prerender = false;
+
   export let classes: Classes;
   export let competition;
 </script>

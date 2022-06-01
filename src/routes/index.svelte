@@ -2,7 +2,6 @@
   import type { Competition } from '../types';
 
   export const hydrate = false;
-  export const prerender = true;
   export const router = false;
 
   export let competitions: Competition;
