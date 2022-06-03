@@ -9,7 +9,7 @@ export async function get() {
   const today = new Date().toISOString().substring(0, 10);
 
   const competitions = body.competitions.filter(
-    (competition: Competition) => competition.date === today && competition.id !== 22939
+    (competition: Competition) => competition.date === today
   );
   return { body: { competitions } };
 }

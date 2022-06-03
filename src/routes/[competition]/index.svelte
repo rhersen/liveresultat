@@ -1,14 +1,20 @@
 <script lang="ts">
-  interface Classes {
-    status: string;
-    classes: { className: string }[];
-    hash: string;
-  }
+  import { onMount } from 'svelte';
 
   export const prerender = false;
 
-  export let classes: Classes;
+  export let classes = [];
   export let competition;
+
+  onMount(async () => {
+    console.log('onMount');
+    const response = await fetch(
+      `https://liveresultat.orientering.se/api.php?method=getclasses&comp=${competition}`
+    );
+
+    ({ classes } = await response.json());
+    console.log(classes);
+  });
 </script>
 
 {#each classes as { className }}

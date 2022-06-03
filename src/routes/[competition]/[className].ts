@@ -1,3 +1,3 @@
-export async function get({ params }: { params: { className: string } }) {
+export async function get({ params }: any) {
   return { body: params };
 }
