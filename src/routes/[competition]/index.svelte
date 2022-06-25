@@ -13,10 +13,10 @@
     );
 
     ({ classes } = await response.json());
-    console.log(classes);
   });
 </script>
 
+<h1>{classes.length} classes</h1>
 {#each classes as { className }}
   <div class="links">
     <a href="{competition}/{className}">{className}</a>

@@ -6,10 +6,9 @@ export async function get() {
   );
   const text = await response.text();
   const body = JSON.parse(text.replace(/\t/g, ''));
-  const today = new Date().toISOString().substring(0, 10);
 
-  const competitions = body.competitions.filter(
-    (competition: Competition) => competition.date === today
+  const descending = body.competitions.filter((competition: Competition) =>
+    /WOC Tour/.test(competition.name)
   );
-  return { body: { competitions } };
+  return { body: { competitions: descending.reverse() } };
 }
